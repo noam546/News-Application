@@ -32,7 +32,7 @@ This is a full-stack application built with Java Spring for the backend and Reac
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/news-application.git
+   git clone https://github.com/noam546/News-Application.git
    cd news-application
    npm install
 	```
