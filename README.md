@@ -8,16 +8,14 @@ This is a full-stack application built with Java Spring for the backend and Reac
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+	- [Starting the application](#Starting the application)
+
 
 ## Features
 
 - Browse and read the latest news articles.
 - Search for specific topics or keywords.
-- User authentication and authorization.
-- ...
+- Search in a range of dates (the left date - from date, the right date - to date)
 
 ## Getting Started
 
