@@ -39,3 +39,8 @@
 .button-container{
     width: 4%;
 }
+
+.date-label{
+    text-align: center;
+    color: #198654;
+}

@@ -88,23 +88,23 @@ function App() {
                 <nav className="navbar navbar-expand-lg bg-body-tertiary">
 
                     <div className="text-container">
+                        <label></label>
                         <input id="search" type="text" className="form-control" placeholder="Search"
                                aria-label="Username"/>
                     </div>
 
                     <div className="input-container">
-                        {/*<label htmlFor="datepicker" className="date-label">from date</label>*/}
+                        <label className="date-label">from date</label>
                         <input type="date" id="datepicker-from" className="form-control" min="2023-10-28"/>
                     </div>
 
                     <div className="input-container">
-                        <div className="date-label">
-                            {/*<label htmlFor="datepicker">to date</label>*/}
-                        </div>
+                            <label className="date-label">to date</label>
                         <input type="date" id="datepicker-to" className="form-control" min="2023-10-28"/>
                     </div>
 
                     <div className="button-container">
+                        <label></label>
                         <button className="btn btn-outline-success" type="submit" onClick={handleSearchClick}>
                             Search
                         </button>
