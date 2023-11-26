@@ -49,7 +49,7 @@ This is a full-stack application built with Java Spring for the backend and Reac
 
 ### Starting the application 
 
-1. Starting the Serve:
+1. Starting the Server:
 	```bash
    cd server
    mvn spring-boot:run
