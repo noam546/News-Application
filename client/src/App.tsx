@@ -34,7 +34,7 @@ function App() {
                 if (response.data.length === 0)
                     setShowMoreButton(false)
                 else {
-                    if(response.data.length < 20)
+                    if (response.data.length < 20)
                         setShowMoreButton(false)
                     const updatedArticles = articles?.concat(response.data);
                     setArticles(updatedArticles)
@@ -63,15 +63,24 @@ function App() {
         const fromDate = document.getElementById('datepicker-from').value;
         // @ts-ignore
         const toDate = document.getElementById('datepicker-to').value;
-        if (newSearchValue !== searchText && newSearchValue.length > 0) {
+        if (isIllegalDates(fromDate,toDate)) {
+            setFetchingArticlesError("Dates values are illegal. from-date cannot be later from to-date")
+        } else if (newSearchValue.length > 0) {
             setSearchText(newSearchValue);
+            setStartIndex(0);
+            setEndIndex(20);
+            setFromDate(fromDate)
+            setToDate(toDate)
+            setShowMoreButton(true);
         }
-        setStartIndex(0);
-        setEndIndex(20);
-        setFromDate(fromDate)
-        setToDate(toDate)
-        setShowMoreButton(true);
+    }
 
+    const isIllegalDates = (from: string, to: string) => {
+        const startDate: Date = new Date(from);
+        const endDate: Date = new Date(to);
+        if(endDate < startDate)
+            return true;
+        return false;
     }
 
     const handleLoadMoreClick = () => {
@@ -99,7 +108,7 @@ function App() {
                     </div>
 
                     <div className="input-container">
-                            <label className="date-label">to date</label>
+                        <label className="date-label">to date</label>
                         <input type="date" id="datepicker-to" className="form-control" min="2023-10-28"/>
                     </div>
 
