@@ -21,7 +21,7 @@ function App() {
     useEffect(() => {
 
         const fetchData = async () => {
-            const response = searchText ? await fetchArticlesByDetails(searchText, fromDate, toDate, startIndex, endIndex) : await fetchTopArticles();
+            const response = await fetchArticlesByDetails(searchText, fromDate, toDate, startIndex, endIndex);
             handleResponse(response);
         };
         fetchData();
@@ -34,11 +34,13 @@ function App() {
                 if (response.data.length === 0)
                     setShowMoreButton(false)
                 else {
+                    if(response.data.length < 20)
+                        setShowMoreButton(false)
                     const updatedArticles = articles?.concat(response.data);
                     setArticles(updatedArticles)
                 }
             } else {
-                if (response.data.length === 0)
+                if (response.data.length === 0 || response.data.length < 20)
                     setShowMoreButton(false)
                 else
                     setShowMoreButton(true)
@@ -92,14 +94,14 @@ function App() {
 
                     <div className="input-container">
                         {/*<label htmlFor="datepicker" className="date-label">from date</label>*/}
-                        <input type="date" id="datepicker-from" className="form-control"/>
+                        <input type="date" id="datepicker-from" className="form-control" min="2023-10-28"/>
                     </div>
 
                     <div className="input-container">
                         <div className="date-label">
                             {/*<label htmlFor="datepicker">to date</label>*/}
                         </div>
-                        <input type="date" id="datepicker-to" className="form-control"/>
+                        <input type="date" id="datepicker-to" className="form-control" min="2023-10-28"/>
                     </div>
 
                     <div className="button-container">
