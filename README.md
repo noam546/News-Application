@@ -23,7 +23,7 @@ This is a full-stack application built with Java Spring for the backend and Reac
 
 ### Prerequisites
 
-- Java Development Kit (JDK) 11 or higher
+- Java Development Kit (JDK) 20 
 - Maven
 - Node.js and npm
 
