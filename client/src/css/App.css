@@ -1,0 +1,41 @@
+.App-header {
+    text-align: center;
+}
+
+.App-header h1 {
+    color: #198654;
+}
+
+.error-message-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 100% of the viewport height */
+}
+
+.error-message{
+    color: #198654;text-align: center;
+
+}
+
+.inputs-container {
+    display: flex;
+    width: 300px;
+}
+
+.date-label {
+    width: 100%;
+}
+
+.input-container {
+    width: 13%;
+}
+
+
+.text-container{
+    width: 70%;
+}
+
+.button-container{
+    width: 4%;
+}
